@@ -6,14 +6,17 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { spaceId, toReplace, replaceWith } = req.query;
+  const { spaceId } = req.query;
+  const { toReplace, replaceWith } = JSON.parse(req.body);
+
+  //TODO: check if spacerid is string otherweise error
 
   if (typeof toReplace === "undefined" || typeof replaceWith === "undefined") {
     return res.status(555).json(BadRequest);
   }
 
   switch (req.method) {
-    case "GET":
+    case "POST":
       const passed = await handling(
         spaceId as string,
         toReplace as string,
