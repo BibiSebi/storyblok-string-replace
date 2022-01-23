@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Navigation = () => {
   return (
-    <nav className="flex pr-28 bg-gray-100">
+    <nav className=" pr-28 bg-blue-50 hidden sm:flex">
       <ul className="flex flex-col w-full pl-4 pt-6">
         <li className=" p-2 ">
           <Link href="/">

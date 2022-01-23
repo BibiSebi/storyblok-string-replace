@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm<Inputs>();
+  } = useForm<Inputs>({ mode: "onSubmit", reValidateMode: "onChange" });
 
   //const space = 138182;
 
@@ -48,7 +48,8 @@ const Home: NextPage = () => {
             id="space-id-input"
             errorMsg={errors.spaceId?.message}
             type="number"
-            {...register("spaceId", { required: "Please enter Space ID." })}
+            register={register}
+            name="spaceId"
           />
 
           <Input
@@ -56,9 +57,8 @@ const Home: NextPage = () => {
             id="to-replace-input"
             errorMsg={errors.toReplace?.message}
             type="text"
-            {...register("toReplace", {
-              required: "Please enter string that will be replaced.",
-            })}
+            register={register}
+            name="toReplace"
           />
 
           <Input
@@ -66,18 +66,17 @@ const Home: NextPage = () => {
             id="replace-with-input"
             errorMsg={errors.replaceWith?.message}
             type="text"
-            {...register("replaceWith", {
-              required: "Please enter the string to replace with.",
-            })}
+            name="replaceWith"
+            register={register}
           />
 
           {/* add hover */}
-          <button
+          <input
+            autoComplete="true"
+            value="Replace"
             className="border rounded-lg border-gray-500  px-8 py-1 mt-6"
             type="submit"
-          >
-            Replace
-          </button>
+          />
         </form>
       </div>
     </div>
