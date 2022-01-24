@@ -10,7 +10,6 @@ import Challenges from "../../components/documenation-steps/challenges";
 import CoreFeature from "../../components/documenation-steps/core-feature";
 import General from "../../components/documenation-steps/general";
 import Improvements from "../../components/documenation-steps/improvements";
-import ProjectStructure from "../../components/documenation-steps/project-structure";
 
 const steps = [
   {
@@ -18,10 +17,7 @@ const steps = [
 
     comp: <General />,
   },
-  {
-    label: "Project Structure",
-    comp: <ProjectStructure />,
-  },
+
   {
     label: "Core Feature",
     comp: <CoreFeature />,
