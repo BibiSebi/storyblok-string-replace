@@ -1,10 +1,10 @@
 import Navigation from "./navigation";
 
-interface LayoutComponent {
+interface LayoutProps {
   children: JSX.Element;
 }
 
-const Layout = ({ children }: LayoutComponent) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen text-black font-sans flex w-full">
       <Navigation />

@@ -1,14 +1,18 @@
+import { RefreshIcon } from "@heroicons/react/outline";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Input from "../components/input";
-
+import UserFeedback from "../components/user-feedback";
 type Inputs = {
   spaceId: string;
   toReplace: string;
   replaceWith: string;
 };
 const Home: NextPage = () => {
+  const [userFeedback, setUserFeedback] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
   const {
     register,
     formState: { errors },
@@ -17,12 +21,42 @@ const Home: NextPage = () => {
 
   //const space = 138182;
 
+  const showFeedback = () => {
+    setTimeout(() => {
+      setUserFeedback(null);
+    }, 5000);
+  };
+
   const onSubmit: SubmitHandler<Inputs> = async (inputs: Inputs) => {
+    setLoading(true);
     const { spaceId, toReplace, replaceWith } = inputs;
-    await fetch(`/api/storyblok/${spaceId}`, {
+
+    const res = await replaceString(spaceId, toReplace, replaceWith);
+
+    setUserFeedback(res);
+    setLoading(false);
+    showFeedback();
+  };
+
+  const replaceString = async (
+    spaceId: string,
+    toReplace: string,
+    replaceWith: string
+  ): Promise<string> => {
+    const res = await fetch(`/api/storyblok/${spaceId}`, {
       method: "POST",
       body: JSON.stringify({ toReplace, replaceWith }),
     });
+    const resJson = await res.json();
+    return getUserFeedback(resJson);
+  };
+
+  const getUserFeedback = (response: any): any => {
+    if (response.code) {
+      return response;
+    } else {
+      return { code: 200, text: "Stories successfully updated!" };
+    }
   };
 
   return (
@@ -36,7 +70,6 @@ const Home: NextPage = () => {
       <h1 className="text-4xl text-center">
         Storyblok string replacement example
       </h1>
-      <span className="text-center mt-4">desc</span>
 
       <div className="px-8 flex items-center justify-center">
         <form
@@ -70,11 +103,14 @@ const Home: NextPage = () => {
             register={register}
           />
 
+          <UserFeedback response={userFeedback} />
+          {loading && <RefreshIcon className="animate-spin w-8 h-8" />}
+
           {/* add hover */}
           <input
             autoComplete="true"
             value="Replace"
-            className="border rounded-lg border-gray-500  px-8 py-1 mt-6"
+            className="border rounded-lg border-blue-400  px-8 py-1 mt-6"
             type="submit"
           />
         </form>

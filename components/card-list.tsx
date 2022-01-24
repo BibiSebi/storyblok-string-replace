@@ -1,4 +1,4 @@
-import TodoItem, { ICard } from "./todo-item";
+import TodoItem, { ICard } from "./card";
 
 interface CardListProps {
   list: ICard[];

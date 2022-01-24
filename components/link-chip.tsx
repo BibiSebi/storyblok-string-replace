@@ -1,13 +1,13 @@
 import { LinkIcon } from "@heroicons/react/outline";
 
-interface LinkChipComponent {
+interface LinkChipProps {
   label: string;
   link: string;
   img?: string;
   alt?: string;
 }
 
-const LinkChip = ({ label, link, img, alt }: LinkChipComponent) => {
+const LinkChip = ({ label, link, img, alt }: LinkChipProps) => {
   return (
     <a
       className="m-1 px-2 py-1 border border-blue-500 rounded-full  flex justify-center items-center"

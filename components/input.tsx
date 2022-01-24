@@ -1,4 +1,4 @@
-interface InputComponent {
+interface InputProps {
   label: string;
   id: string;
   type: string;
@@ -7,14 +7,7 @@ interface InputComponent {
   errorMsg?: string | undefined;
 }
 
-const Input = ({
-  label,
-  id,
-  type,
-  errorMsg,
-  register,
-  name,
-}: InputComponent) => {
+const Input = ({ label, id, type, errorMsg, register, name }: InputProps) => {
   return (
     <div className="flex w-full flex-col my-2">
       <label className="" htmlFor={id}>
@@ -22,7 +15,7 @@ const Input = ({
       </label>
       <input
         className={`border h-10 rounded-xl pl-2 ${
-          errorMsg ? "border-red-700" : "border-gray-500"
+          errorMsg ? "border-red-700" : "border-blue-400"
         }`}
         type={type}
         id={id}

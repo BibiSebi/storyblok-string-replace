@@ -4,8 +4,8 @@ import {
   CollectionIcon,
 } from "@heroicons/react/outline";
 import Article from "../article";
-import { ICard } from "../todo-item";
-import CardList from "../todo-list";
+import { ICard } from "../card";
+import CardList from "../card-list";
 
 const Challanges: ICard[] = [
   {
@@ -14,12 +14,13 @@ const Challanges: ICard[] = [
     icon: ClockIcon,
   },
   {
-    title: "defining personal scope",
+    title: "Personal Scope",
     desc: "many ideas, priorizing",
     icon: CollectionIcon,
   },
-  { title: "requirements", desc: "open scope", icon: ClipboardListIcon },
+  { title: "Requirements", desc: "open scope", icon: ClipboardListIcon },
 ];
+
 const Challenges = () => {
   return (
     <Article title="Challenges">

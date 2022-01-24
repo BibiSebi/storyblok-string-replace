@@ -12,7 +12,7 @@ import General from "../../components/documenation-steps/general";
 import Improvements from "../../components/documenation-steps/improvements";
 import ProjectStructure from "../../components/documenation-steps/project-structure";
 
-const steps1 = [
+const steps = [
   {
     label: "General",
 
@@ -40,7 +40,7 @@ const Documentation: NextPage = () => {
   const [activeStep, setActiveStep] = React.useState(0);
 
   const totalSteps = () => {
-    return steps1.length;
+    return steps.length;
   };
 
   const isLastStep = () => {
@@ -79,7 +79,7 @@ const Documentation: NextPage = () => {
           }}
         >
           <Stepper nonLinear activeStep={activeStep} className="flex-wrap">
-            {steps1.map(({ label }, index) => (
+            {steps.map(({ label }, index) => (
               <Step key={label}>
                 <StepButton color="inherit" onClick={handleStep(index)}>
                   {label}
@@ -89,7 +89,7 @@ const Documentation: NextPage = () => {
           </Stepper>
           <div className="flex-grow flex flex-col">
             <React.Fragment>
-              <div className="h-full mt-6">{steps1[activeStep].comp}</div>
+              <div className="h-full mt-6">{steps[activeStep].comp}</div>
 
               <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
                 <Button

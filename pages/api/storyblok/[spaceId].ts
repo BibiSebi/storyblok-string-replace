@@ -12,8 +12,7 @@ export default async function handler(
 ) {
   const { spaceId } = req.query;
   const { toReplace, replaceWith } = JSON.parse(req.body);
-
-  //TODO: check if spacerid is string otherweise error
+  let response = true;
 
   if (typeof toReplace === "undefined" || typeof replaceWith === "undefined") {
     return res.status(400).json(BadRequest);
@@ -21,14 +20,15 @@ export default async function handler(
 
   switch (req.method) {
     case "POST":
-      const passed = await replaceStringInStories(
+      response = await replaceStringInStories(
         spaceId as string,
         toReplace as string,
         replaceWith as string
       );
-      passed ? res.status(200).json({}) : res.status(500).json(null);
       break;
   }
+
+  return response ? res.status(200).json({}) : res.status(500).json(BadRequest);
 }
 
 const replaceString = (
@@ -107,9 +107,8 @@ const replaceStringInStories = async (
   spaceId: string,
   toReplace: string,
   replaceWith: string
-) => {
+): Promise<boolean> => {
   try {
-    //type
     const allStoriesWithText = await getStoriesBySpaceIdWithText(
       spaceId,
       toReplace
@@ -118,10 +117,10 @@ const replaceStringInStories = async (
     const regexp = createStringReqExp(toReplace);
 
     for (const story of allStoriesWithText.data.stories) {
-      const onestory = await getStoryById(story.id, spaceId);
+      const oneStory = await getStoryById(story.id, spaceId);
 
       const newContent = replaceString(
-        onestory.data.story.content,
+        oneStory.data.story.content,
         regexp,
         replaceWith
       );
@@ -129,8 +128,7 @@ const replaceStringInStories = async (
       await updateStory(story.id, spaceId, newContent);
     }
     return true;
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
     return false;
   }
 };

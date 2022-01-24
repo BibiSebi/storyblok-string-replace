@@ -1,8 +1,6 @@
 import Article from "../article";
-import { ICard } from "../todo-item";
-import CardList from "../todo-list";
-
-//add subtexct possibility
+import { ICard } from "../card";
+import CardList from "../card-list";
 
 const ImprovementTodos: ICard[] = [
   {
@@ -14,6 +12,8 @@ const ImprovementTodos: ICard[] = [
     desc: "only change string according to schema where type is text",
   },
   { title: "Responsivness", desc: "mobile devices, menu for mobile" },
+  { title: "Error Handling", desc: "more details, reusable" },
+  { title: "UX", desc: "user feedback, loading states" },
 ];
 
 const Improvements = () => {

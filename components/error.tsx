@@ -1,9 +1,9 @@
-interface ErrorComponent {
+interface ErrorProps {
   code: number;
   text: string;
 }
 
-const Error = ({ code, text }: ErrorComponent) => {
+const Error = ({ code, text }: ErrorProps) => {
   return (
     <div>
       <span>
