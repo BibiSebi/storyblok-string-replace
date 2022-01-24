@@ -14,6 +14,7 @@ const ImprovementTodos: ICard[] = [
   { title: "Responsivness", desc: "mobile devices, menu for mobile" },
   { title: "Error Handling", desc: "more details, reusable" },
   { title: "UX", desc: "user feedback, loading states" },
+  { title: "testing", desc: "unit tests" },
 ];
 
 const Improvements = () => {

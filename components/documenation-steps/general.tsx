@@ -36,6 +36,10 @@ const technologies: Technology[] = [
     label: "heroicons",
     link: "https://heroicons.com/",
   },
+  {
+    label: "React Syntax Highlighter",
+    link: "https://github.com/react-syntax-highlighter/react-syntax-highlighter#readme",
+  },
 ];
 
 const General = () => {
