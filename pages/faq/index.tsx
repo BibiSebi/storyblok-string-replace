@@ -24,7 +24,7 @@ const FAQ = () => {
   return (
     <div className="w-full p-8 flex flex-col">
       <Head>
-        <title>Storyblok example | FAQ</title>
+        <title>Storyblok | FAQ</title>
       </Head>
       <h1 className="text-4xl text-center">FAQ</h1>
 

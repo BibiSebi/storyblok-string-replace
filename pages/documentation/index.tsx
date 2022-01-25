@@ -54,11 +54,9 @@ const Documentation: NextPage = () => {
   return (
     <div className="w-full p-8 flex flex-col">
       <Head>
-        <title>Storyblok example | Documentation</title>
+        <title>Storyblok | Documentation</title>
       </Head>
-      <h1 className="text-4xl text-center">
-        Storyblok string replacement example
-      </h1>
+      <h1 className="text-4xl text-center">Storyblok string replacement</h1>
 
       <div className="mt-8 flex flex-grow pt-8">
         <Box
