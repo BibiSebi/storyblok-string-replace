@@ -19,8 +19,6 @@ const Home: NextPage = () => {
     handleSubmit,
   } = useForm<Inputs>({ mode: "onSubmit", reValidateMode: "onChange" });
 
-  //const space = 138182;
-
   const showFeedback = () => {
     setTimeout(() => {
       setUserFeedback(null);

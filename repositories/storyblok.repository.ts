@@ -2,7 +2,7 @@ import {
   StoryblokManagmentApiResult,
   StoryblokResult,
 } from "storyblok-js-client";
-import { StoryblokManagementClient } from "../../utils/storyblok";
+import { StoryblokManagementClient } from "../utils/storyblok";
 
 export default class StoryblokRepository {
   public getStoriesBySpaceIdWithText = async (

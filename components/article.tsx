@@ -1,9 +1,9 @@
-interface ArticleComponent {
+interface ArticleProps {
   title: string;
   children: JSX.Element;
 }
 
-const Article = ({ title, children }: ArticleComponent) => {
+const Article = ({ title, children }: ArticleProps) => {
   return (
     <article>
       <h2 className="text-3xl text-center">{title}</h2>

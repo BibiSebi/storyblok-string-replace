@@ -1,6 +1,6 @@
 import { NextApiRequest } from "next";
-import StringReplaceUtils from "../../utils/string-replacement";
-import StoryblokRepository from "./storyblok.repository";
+import StoryblokRepository from "../repositories/storyblok.repository";
+import StringReplaceUtils from "../utils/string-replacement";
 export default class StoryblokService {
   constructor(private storyblokRepository: StoryblokRepository) {}
 

@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import StoryblokRepository from "../../../services/storyblok/storyblok.repository";
-import StoryblokService from "../../../services/storyblok/storyblok.service";
+import StoryblokRepository from "../../../repositories/storyblok.repository";
+import StoryblokService from "../../../services/storyblok.service";
 import { BadRequest } from "./../../../constants/errors";
 
 const storyblokService = new StoryblokService(new StoryblokRepository());

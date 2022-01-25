@@ -9,7 +9,6 @@ interface Technology {
 
 const agendaList = [
   "Technologies",
-  "Project Structure",
   "Core Feature",
   "Challenges",
   "Improvements",
