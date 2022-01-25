@@ -9,7 +9,7 @@ const faqList: FAQ[] = [
   {
     question: `Hey! I love Storyblok. I built my website with Nuxt and Storyblok and have static local version.
   How and where can I deploy the static website? Can I deploy it to Storyblok?`,
-    answer: ` Hello!  Nuxt has a selection of preffered services for deployment (https://nuxtjs.org/deployments) You can read more about that here. You cannot deploy your Nuxt App to Storyblok as Storyblok is not a hosting platform or deployment service.
+    answer: ` Hello!  Nuxt has a selection of preferred services for deployment (https://nuxtjs.org/deployments) You can read more about that here. You cannot deploy your Nuxt App to Storyblok as Storyblok is not a hosting platform or deployment service.
   Here is an example of a static Nuxt App deployment on Netflify: https://vuedose.tips/generate-and-deploy-the-blog-as-a-full-static-nuxt-site. If you have any further questions please do not hesitate asking.
     `,
   },

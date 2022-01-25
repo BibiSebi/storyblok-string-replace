@@ -7,7 +7,7 @@ import Article from "../article";
 import { ICard } from "../card";
 import CardList from "../card-list";
 
-const Challanges: ICard[] = [
+const challenges: ICard[] = [
   {
     title: "Time",
     desc: "time limits",
@@ -15,7 +15,7 @@ const Challanges: ICard[] = [
   },
   {
     title: "Personal Scope",
-    desc: "many ideas, priorizing",
+    desc: "many ideas, prioritizing",
     icon: CollectionIcon,
   },
   { title: "Requirements", desc: "open scope", icon: ClipboardListIcon },
@@ -26,10 +26,10 @@ const Challenges = () => {
     <Article title="Challenges">
       <>
         <p className="my-4">
-          Like during any other project, I encountered several challanges. Here
+          Like during any other project, I encountered several challenges. Here
           is a short list of some of them:
         </p>
-        <CardList list={Challanges} />
+        <CardList list={challenges} />
       </>
     </Article>
   );

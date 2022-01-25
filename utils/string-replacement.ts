@@ -23,6 +23,7 @@ export default class StringReplaceUtils {
 
       if (typeof value === "string") {
         input[key] = value?.replace(replaceRegExp, replaceWith);
+        continue;
       }
 
       if (typeof value === "object" && !Array.isArray(value)) {

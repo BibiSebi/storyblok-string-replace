@@ -3,18 +3,18 @@ import { ICard } from "../card";
 import CardList from "../card-list";
 
 const ImprovementTodos: ICard[] = [
-  {
-    title: "A11y",
-    desc: "color contrasts, live regions, states",
-  },
+  { title: "Error Handling", desc: "more details, reusable" },
   {
     title: "Schema Api",
     desc: "only change string according to schema where type is text",
   },
-  { title: "Responsivness", desc: "mobile devices, menu for mobile" },
-  { title: "Error Handling", desc: "more details, reusable" },
+  { title: "Testing", desc: "unit tests" },
+  {
+    title: "A11y",
+    desc: "color contrasts, live regions, states",
+  },
+  { title: "Responsiveness", desc: "mobile devices, menu for mobile" },
   { title: "UX", desc: "user feedback, loading states" },
-  { title: "testing", desc: "unit tests" },
 ];
 
 const Improvements = () => {
