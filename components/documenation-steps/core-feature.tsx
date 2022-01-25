@@ -1,5 +1,4 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Article from "../article";
 
 const codeSnippet = `const replaceString = ( 
@@ -47,9 +46,17 @@ const CoreFeature = () => {
   return (
     <Article title="Core Feature">
       <>
+        <h3 className="text-2xl">Solution</h3>
+        <p>
+          In this example I used the tree search algorithm which goes trough
+          each key of the json response and checks if the value is a string or
+          not. This is possible via recursion.
+        </p>
+
+        <h3 className="text-2xl">Code</h3>
+
         <SyntaxHighlighter
           language="typescript"
-          style={prism}
           customStyle={{ background: "none" }}
           showLineNumbers
         >

@@ -65,7 +65,7 @@ const Documentation: NextPage = () => {
         Storyblok string replacement example
       </h1>
 
-      <div className="mt-8 flex flex-grow border-t border-blue-300 pt-8">
+      <div className="mt-8 flex flex-grow pt-8">
         <Box
           sx={{
             width: "100%",
