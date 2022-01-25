@@ -14,6 +14,7 @@ const Input = ({ label, id, type, errorMsg, register, name }: InputProps) => {
         {label}
       </label>
       <input
+        autoComplete="on"
         className={`border h-10 rounded-xl pl-2 ${
           errorMsg ? "border-red-700" : "border-blue-400"
         }`}
