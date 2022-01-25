@@ -17,5 +17,7 @@ export default async function handler(
       break;
   }
 
-  return response ? res.status(200).json({}) : res.status(500).json(BadRequest);
+  return response
+    ? res.status(200).json({ code: 200, text: "Stories successfully updated!" })
+    : res.status(500).json(BadRequest);
 }

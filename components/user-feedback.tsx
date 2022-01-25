@@ -31,7 +31,7 @@ const UserFeedback = ({ response }: UserFeedbackProps) => {
             response.code === 200 ? "text-green-500" : "text-red-500"
           }`}
         >
-          Error {response.code}: {response.text}
+          Response {response.code}: {response.text}
         </span>
       </div>
     )

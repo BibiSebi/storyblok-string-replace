@@ -45,16 +45,7 @@ const Home: NextPage = () => {
       method: "POST",
       body: JSON.stringify({ toReplace, replaceWith }),
     });
-    const resJson = await res.json();
-    return getUserFeedback(resJson);
-  };
-
-  const getUserFeedback = (response: any): any => {
-    if (response.code) {
-      return response;
-    } else {
-      return { code: 200, text: "Stories successfully updated!" };
-    }
+    return await res.json();
   };
 
   return (
