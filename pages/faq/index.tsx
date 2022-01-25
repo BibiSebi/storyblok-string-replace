@@ -30,8 +30,8 @@ const FAQ = () => {
 
       <section className="mt-4 w-1/2 ">
         <ul>
-          {faqList.map((faqListItem) => (
-            <li className="p-4 flex flex-col">
+          {faqList.map((faqListItem, idx) => (
+            <li key={idx} className="p-4 flex flex-col">
               <span className="mb-2"> Question: {faqListItem.question}</span>
               <span>Answer: {faqListItem.answer}</span>
             </li>
