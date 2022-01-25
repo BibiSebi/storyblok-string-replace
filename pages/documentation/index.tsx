@@ -7,7 +7,6 @@ import { NextPage } from "next";
 import Head from "next/head";
 import * as React from "react";
 import Challenges from "../../components/documenation-steps/challenges";
-import CoreFeature from "../../components/documenation-steps/core-feature";
 import General from "../../components/documenation-steps/general";
 import Improvements from "../../components/documenation-steps/improvements";
 
@@ -18,10 +17,6 @@ const steps = [
     comp: <General />,
   },
 
-  {
-    label: "Core Feature",
-    comp: <CoreFeature />,
-  },
   {
     label: "Challenges",
     comp: <Challenges />,

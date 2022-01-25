@@ -7,12 +7,7 @@ interface Technology {
   link: string;
 }
 
-const agendaList = [
-  "Technologies",
-  "Core Feature",
-  "Challenges",
-  "Improvements",
-];
+const agendaList = ["Technologies", "Demo", "Challenges", "Improvements"];
 
 const technologies: Technology[] = [
   {
@@ -84,7 +79,7 @@ const General = () => {
           <a
             rel="noopener noreferrer"
             target="_blank"
-            href="https://mapi.storyblok.com"
+            href="https://www.storyblok.com/docs/api/management"
             className="bg-blue-50 rounded-md p-1 mt-2"
             aria-label="Link opens a new page: Storyblok management api"
           >
